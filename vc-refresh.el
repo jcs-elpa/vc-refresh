@@ -34,7 +34,7 @@
 (require 'vc-hooks)
 
 (defgroup vc-refresh nil
-  "Refresh vc-state in certain events for better UX."
+  "Refresh `vc-state' in certain events for better UX."
   :prefix "vc-refresh-"
   :group 'vc
   :link '(url-link :tag "Repository" "https://github.com/jcs-elpa/vc-refresh"))
