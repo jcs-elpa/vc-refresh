@@ -70,6 +70,5 @@
   :group 'eval-mark
   (if vc-refresh-mode (vc-refresh--enable) (vc-refresh--disable)))
 
-
 (provide 'vc-refresh)
 ;;; vc-refresh.el ends here
