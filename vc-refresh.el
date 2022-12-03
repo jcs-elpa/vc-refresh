@@ -31,6 +31,37 @@
 
 ;;; Code:
 
+(require 'vc-hooks)
+
+(defgroup vc-refresh nil
+  "Refresh vc-state in certain events for better UX."
+  :prefix "vc-refresh-"
+  :group 'vc
+  :link '(url-link :tag "Repository" "https://github.com/jcs-elpa/vc-refresh-mode"))
+
+(defcustom vc-refresh-commands
+  '( magit-checkout)
+  "List of commands/functions to handle."
+  :type 'list
+  :group 'vc-refresh)
+
+(defun vc-refresh--enable ()
+  "Enable function `vc-refresh-mode'."
+  (dolist (command vc-refresh-commands)
+    (advice-add command :after #'vc-refresh-state)))
+
+(defun vc-refresh--disable ()
+  "Disable function `vc-refresh-mode'."
+  (dolist (command vc-refresh-commands)
+    (advice-remove command #'vc-refresh-state)))
+
+;;;###autoload
+(define-minor-mode vc-refresh-mode
+  "Minor mode `vc-refresh-mode'."
+  :global t
+  :require 'vc-refresh-mode
+  :group 'eval-mark
+  (if vc-refresh-mode (vc-refresh--enable) (vc-refresh--disable)))
 
 
 (provide 'vc-refresh-mode)
