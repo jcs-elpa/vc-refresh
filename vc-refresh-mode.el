@@ -4,9 +4,9 @@
 
 ;; Author: Shen, Jen-Chieh <jcs090218@gmail.com>
 ;; Maintainer: Shen, Jen-Chieh <jcs090218@gmail.com>
-;; URL: https://github.com/jcs090218/vc-refresh-mode
-;; Version: 0.0.1
-;; Package-Requires: ((emacs "24.3"))
+;; URL: https://github.com/jcs-elpa/vc-refresh-mode
+;; Version: 0.1.0
+;; Package-Requires: ((emacs "26.1"))
 ;; Keywords: vc
 
 ;; This file is not part of GNU Emacs.
