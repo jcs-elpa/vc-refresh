@@ -1,3 +1,5 @@
+;; -*- mode: eask; lexical-binding: t -*-
+
 (package "vc-refresh"
          "0.1.0"
          "Refresh vc-state in certain events for better UX")
